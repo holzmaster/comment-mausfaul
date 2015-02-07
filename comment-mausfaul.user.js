@@ -3,7 +3,7 @@
 // @author		holzmaster
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
-// @version		1.1.1
+// @version		1.1.2
 // @updateURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @downloadURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -23,6 +23,13 @@
 		p.View.User.prototype.template
 			.split('{"Punkt".inflect(c.score)}</span>').join(
 					 '{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+		if(p.currentView.__proto__.classId === p.View.User.classId)
+		{
+			// Somehow the user page is buggy, so force template recompilation.
+			var t = p.compileTemplate(p.View.User.prototype.template);
+			p._compiledTemplates[p.View.User.classId] = t;
+			p.currentView.compiledTemplate = t;
+		}
 
 		p.View.User.Comments.prototype.template =
 		p.View.User.Comments.prototype.template
