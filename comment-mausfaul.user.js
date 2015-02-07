@@ -3,7 +3,7 @@
 // @author		holzmaster
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
-// @version		1.1.0
+// @version		1.1.1
 // @updateURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @downloadURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -21,7 +21,7 @@
 
 		p.View.User.prototype.template =
 		p.View.User.prototype.template
-			.replace('{"Punkt".inflect(c.score)}</span>',
+			.split('{"Punkt".inflect(c.score)}</span>').join(
 					 '{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
 
 		p.View.User.Comments.prototype.template =
