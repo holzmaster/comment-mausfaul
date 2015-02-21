@@ -3,6 +3,8 @@
 
 Für Leute, die ihre Maus nicht bewegen wollen, um die Up-/Downvotes eines Kommentars zu sehen.
 
+![Sample](https://i.imgur.com/pvgkcEp.png)
+
 ## Installation
 1. Browser einrichten
   - Firefox benötigt [Greasemonkey](https://addons.mozilla.org/de/firefox/addon/greasemonkey/).
