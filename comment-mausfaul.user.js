@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name		ExtendedBenis für Mausfaule
+// @name		ExtendedBenis für Kommentare
 // @author		holzmaster
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
