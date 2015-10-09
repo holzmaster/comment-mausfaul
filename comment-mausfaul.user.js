@@ -4,7 +4,7 @@
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
-// @version		1.1.3
+// @version		1.2.0
 // @updateURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @downloadURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -15,6 +15,9 @@
 
 (function() {
 	$(function() {
+
+		CONFIG.COMMENT_SHOW_SCORE_AGE = 0;
+
 		p.View.Stream.Comments.prototype.template =
 		p.View.Stream.Comments.prototype.template
 			.replace('{"Punkt".inflect(c.score)}</span>',
