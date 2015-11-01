@@ -5,8 +5,8 @@
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
 // @version		1.2.0
-// @updateURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
-// @downloadURL	https://raw.githubusercontent.com/pr0nopoly/comment-mausfaul/master/comment-mausfaul.user.js
+// @updateURL	https://raw.githubusercontent.com/holzmaster/comment-mausfaul/master/comment-mausfaul.user.js
+// @downloadURL	https://raw.githubusercontent.com/holzmaster/comment-mausfaul/master/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
 // @description	Für Leute, die ihre Maus nicht bewegen wollen, um die Up-/Downvotes eines Kommentars zu sehen.
 // @icon		http://pr0gramm.com/media/pr0gramm-favicon.png
