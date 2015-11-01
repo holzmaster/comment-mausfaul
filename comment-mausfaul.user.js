@@ -4,7 +4,7 @@
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
-// @version		1.2.0
+// @version		1.2.1
 // @updateURL	https://raw.githubusercontent.com/holzmaster/comment-mausfaul/master/comment-mausfaul.user.js
 // @downloadURL	https://raw.githubusercontent.com/holzmaster/comment-mausfaul/master/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
