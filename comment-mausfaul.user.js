@@ -4,7 +4,7 @@
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
-// @version		1.2.2
+// @version		1.2.3
 // @updateURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @downloadURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -16,7 +16,7 @@
 (function() {
 	$(function() {
 
-		CONFIG.COMMENT_SHOW_SCORE_AGE = 0;
+		CONFIG.SHOW_SCORE_MIN_AGE = 0;
 
 		p.View.Stream.Comments.prototype.template =
 		p.View.Stream.Comments.prototype.template
