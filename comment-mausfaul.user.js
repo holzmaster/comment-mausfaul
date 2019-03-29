@@ -4,7 +4,7 @@
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
-// @version		1.2.3
+// @version		1.3.0
 // @updateURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @downloadURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -13,22 +13,23 @@
 // @grant		none
 // ==/UserScript==
 
-(function() {
-	$(function() {
+(function () {
+	const s = document.createElement('script');
+	s.appendChild(document.createTextNode('('+ uneval(main) +')();'));
+	(document.body || document.head || document.documentElement).appendChild(s);
 
-		CONFIG.SHOW_SCORE_MIN_AGE = 0;
+	function main() {
 
 		p.View.Stream.Comments.prototype.template =
-		p.View.Stream.Comments.prototype.template
-			.replace('{"Punkt".inflect(c.score)}</span>',
-					 '{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+			p.View.Stream.Comments.prototype.template
+				.replace('{"Punkt".inflect(c.score)}</span>',
+					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
 
 		p.View.User.prototype.template =
-		p.View.User.prototype.template
-			.split('{"Punkt".inflect(c.score)}</span>').join(
-					 '{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
-		if(p.currentView.__proto__.classId === p.View.User.classId)
-		{
+			p.View.User.prototype.template
+				.split('{"Punkt".inflect(c.score)}</span>').join(
+					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+		if (p.currentView.__proto__.classId === p.View.User.classId) {
 			// Somehow the user page is buggy, so force template recompilation.
 			var t = p.compileTemplate(p.View.User.prototype.template);
 			p._compiledTemplates[p.View.User.classId] = t;
@@ -36,8 +37,8 @@
 		}
 
 		p.View.User.Comments.prototype.template =
-		p.View.User.Comments.prototype.template
-			.replace('{"Punkt".inflect(c.score)}</span>',
-					 '{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
-	});
+			p.View.User.Comments.prototype.template
+				.replace('{"Punkt".inflect(c.score)}</span>',
+					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+	}
 })();
