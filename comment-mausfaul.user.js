@@ -4,7 +4,7 @@
 // @namespace	holzmaster
 // @include		http://pr0gramm.com*
 // @include		https://pr0gramm.com*
-// @version		1.3.1
+// @version		1.4.0
 // @updateURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @downloadURL	https://holzmaster.github.io/comment-mausfaul/comment-mausfaul.user.js
 // @copyright	2014+, holzmaster
@@ -20,15 +20,16 @@
 
 	function main() {
 
-		p.View.Stream.Comments.prototype.template =
-			p.View.Stream.Comments.prototype.template
-				.replace('{"Punkt".inflect(c.score)}</span>',
-					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+		p.View.Stream.Comments.prototype.template = p.View.Stream.Comments.prototype.template
+			.replace(
+				'>{c.score} Benis</span>',
+				'>{c.score} Benis <i>({c.up}/{c.down})</i></span>',
+			);
 
-		p.View.User.prototype.template =
-			p.View.User.prototype.template
-				.split('{"Punkt".inflect(c.score)}</span>').join(
-					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+		p.View.User.prototype.template = p.View.User.prototype.template
+			.split('Minus">{c.score} Benis</span>')
+			.join('Minus">{c.score} Benis <i>({c.up}/{c.down})</i></span>');
+		
 		if (p.currentView.__proto__.classId === p.View.User.classId) {
 			// Somehow the user page is buggy, so force template recompilation.
 			var t = p.compileTemplate(p.View.User.prototype.template);
@@ -36,9 +37,10 @@
 			p.currentView.compiledTemplate = t;
 		}
 
-		p.View.User.Comments.prototype.template =
-			p.View.User.Comments.prototype.template
-				.replace('{"Punkt".inflect(c.score)}</span>',
-					'{"Punkt".inflect(c.score)} <i>({c.up}/{c.down})</i></span>');
+		p.View.User.Comments.prototype.template = p.View.User.Comments.prototype.template
+			.replace(
+				'Minus">{c.score} Benis</span>',
+				'Minus">{c.score} Benis <i>({c.up}/{c.down})</i></span>',
+			);
 	}
 })();
